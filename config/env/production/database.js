@@ -8,7 +8,7 @@ module.exports = ({ env }) => ({
       user: env("DATABASE_USERNAME"),
       password: env("DATABASE_PASSWORD"),
       ssl: {
-        ca: env("DATABSE_CA"),
+        ca: env("DATABASE_CA"),
       },
     },
     debug: false,
