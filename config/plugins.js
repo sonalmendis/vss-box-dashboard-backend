@@ -4,10 +4,10 @@ module.exports = ({ env }) => ({
     config: {
       provider: "strapi-provider-upload-do",
       providerOptions: {
-        key: env("DO_SPACE_ACCESS_KEY"),
-        secret: env("DO_SPACE_SECRET_KEY"),
-        endpoint: env("DO_SPACE_ENDPOINT"),
-        space: env("DO_SPACE_BUCKET"),
+        key: "DO00K4BV7R63YEPVUE94",
+        secret: "/V+s8cW9B2OZEpmpLezZa2SBGCEu0V1Ap8v8J0Khjh8",
+        endpoint: "sgp1.digitaloceanspaces.com",
+        space: "strapi-images",
       },
     },
   },
