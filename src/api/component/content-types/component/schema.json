@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "components",
+  "info": {
+    "singularName": "component",
+    "pluralName": "components",
+    "displayName": "Component",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "componentName": {
+      "type": "string",
+      "required": true
+    },
+    "previewImages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "exampleUsageCode": {
+      "type": "richtext"
+    },
+    "code_blocks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::code-block.code-block"
+    }
+  }
+}

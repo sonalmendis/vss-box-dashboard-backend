@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "code_blocks",
+  "info": {
+    "singularName": "code-block",
+    "pluralName": "code-blocks",
+    "displayName": "code-block",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "filePath": {
+      "type": "string",
+      "required": true
+    },
+    "code": {
+      "type": "richtext"
+    }
+  }
+}
