@@ -32,6 +32,16 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::code-block.code-block"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "Layout",
+        "Header/Footer",
+        "Typeface",
+        "Form/Button",
+        "Boilerplate"
+      ]
     }
   }
 }
