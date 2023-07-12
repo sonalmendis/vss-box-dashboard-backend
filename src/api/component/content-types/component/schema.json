@@ -40,7 +40,8 @@
         "Header/Footer",
         "Typeface",
         "Form/Button",
-        "Boilerplate"
+        "Boilerplate",
+        "Animation"
       ]
     }
   }
