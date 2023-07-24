@@ -39,9 +39,10 @@
         "Layout",
         "Header/Footer",
         "Typeface",
-        "Form/Button",
+        "Form/UI",
         "Boilerplate",
-        "Animation"
+        "Animation",
+        "Function"
       ]
     },
     "test_result": {
