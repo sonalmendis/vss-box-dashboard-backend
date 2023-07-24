@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sfdfsdfs_device_test_list2s",
+  "info": {
+    "displayName": "device-test-list",
+    "icon": "alien",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Device": {
+      "type": "enumeration",
+      "enum": [
+        "iphone1",
+        "iphone2",
+        "iphone3",
+        "android1"
+      ]
+    },
+    "TestResults": {
+      "type": "enumeration",
+      "enum": [
+        "Pass",
+        "Error",
+        "Not Tested"
+      ]
+    }
+  }
+}

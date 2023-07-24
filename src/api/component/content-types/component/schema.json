@@ -43,6 +43,12 @@
         "Boilerplate",
         "Animation"
       ]
+    },
+    "test_result": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::test-result.test-result",
+      "mappedBy": "component"
     }
   }
 }

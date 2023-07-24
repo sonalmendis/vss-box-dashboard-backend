@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "test_results",
+  "info": {
+    "singularName": "test-result",
+    "pluralName": "test-results",
+    "displayName": "test-results",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "component": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::component.component",
+      "inversedBy": "test_result"
+    },
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "TestReults": {
+      "type": "component",
+      "repeatable": true,
+      "component": "device-testing.device-test-list2",
+      "required": true
+    }
+  }
+}
