@@ -42,7 +42,8 @@
         "Form/UI",
         "Boilerplate",
         "Animation",
-        "Function"
+        "Function",
+        "Guide"
       ]
     },
     "test_result": {
