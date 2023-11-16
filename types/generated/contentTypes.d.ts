@@ -837,6 +837,7 @@ export interface ApiPricingPricing extends Schema.CollectionType {
     price_class: Attribute.String;
     price: Attribute.String;
     price_desc: Attribute.String;
+    Rank: Attribute.UID;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

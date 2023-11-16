@@ -20,6 +20,9 @@
     },
     "price_desc": {
       "type": "string"
+    },
+    "Rank": {
+      "type": "uid"
     }
   }
 }
