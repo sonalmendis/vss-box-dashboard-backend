@@ -80,10 +80,22 @@ export interface DeviceTestingDeviceTestList2 extends Schema.Component {
   };
 }
 
+export interface PricesPricing extends Schema.Component {
+  collectionName: 'components_prices_pricings';
+  info: {
+    displayName: 'pricing';
+  };
+  attributes: {
+    price_class: Attribute.String;
+    price: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'device-testing.device-test-list2': DeviceTestingDeviceTestList2;
+      'prices.pricing': PricesPricing;
     }
   }
 }

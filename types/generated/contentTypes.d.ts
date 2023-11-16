@@ -822,6 +822,39 @@ export interface ApiGuideGuide extends Schema.CollectionType {
   };
 }
 
+export interface ApiPricingPricing extends Schema.CollectionType {
+  collectionName: 'pricings';
+  info: {
+    singularName: 'pricing';
+    pluralName: 'pricings';
+    displayName: 'Pricing';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    price_class: Attribute.String;
+    price: Attribute.String;
+    price_desc: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::pricing.pricing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::pricing.pricing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTestResultTestResult extends Schema.CollectionType {
   collectionName: 'test_results';
   info: {
@@ -880,6 +913,7 @@ declare module '@strapi/types' {
       'api::code-block.code-block': ApiCodeBlockCodeBlock;
       'api::component.component': ApiComponentComponent;
       'api::guide.guide': ApiGuideGuide;
+      'api::pricing.pricing': ApiPricingPricing;
       'api::test-result.test-result': ApiTestResultTestResult;
     }
   }
