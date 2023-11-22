@@ -772,6 +772,13 @@ export interface ApiComponentComponent extends Schema.CollectionType {
       'api::test-result.test-result'
     >;
     rank: Attribute.Integer;
+    yuyiyuiyui: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'markdown';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -804,11 +811,11 @@ export interface ApiGuideGuide extends Schema.CollectionType {
   attributes: {
     Title: Attribute.String;
     Text: Attribute.Blocks;
-    Guide: Attribute.RichText &
+    guide: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'toolbar';
+          preset: 'markdown';
         }
       >;
     createdAt: Attribute.DateTime;

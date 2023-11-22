@@ -54,6 +54,13 @@
     },
     "rank": {
       "type": "integer"
+    },
+    "yuyiyuiyui": {
+      "type": "customField",
+      "options": {
+        "preset": "markdown"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }
