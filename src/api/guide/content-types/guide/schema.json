@@ -15,9 +15,6 @@
     "Title": {
       "type": "string"
     },
-    "Text": {
-      "type": "blocks"
-    },
     "guide": {
       "type": "customField",
       "options": {

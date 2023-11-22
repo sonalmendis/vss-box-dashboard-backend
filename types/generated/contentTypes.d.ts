@@ -810,7 +810,6 @@ export interface ApiGuideGuide extends Schema.CollectionType {
   };
   attributes: {
     Title: Attribute.String;
-    Text: Attribute.Blocks;
     guide: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
