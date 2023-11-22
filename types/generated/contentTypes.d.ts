@@ -804,6 +804,13 @@ export interface ApiGuideGuide extends Schema.CollectionType {
   attributes: {
     Title: Attribute.String;
     Text: Attribute.Blocks;
+    Guide: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

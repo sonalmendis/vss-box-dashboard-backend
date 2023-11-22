@@ -17,6 +17,13 @@
     },
     "Text": {
       "type": "blocks"
+    },
+    "Guide": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }
