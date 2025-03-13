@@ -797,6 +797,45 @@ export interface ApiComponentComponent extends Schema.CollectionType {
   };
 }
 
+export interface ApiFrontPageContentFrontPageContent
+  extends Schema.CollectionType {
+  collectionName: 'front_page_contents';
+  info: {
+    singularName: 'front-page-content';
+    pluralName: 'front-page-contents';
+    displayName: 'Front Page Content';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Content: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'markdown';
+        }
+      >;
+    coverimage: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::front-page-content.front-page-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::front-page-content.front-page-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiGuideGuide extends Schema.CollectionType {
   collectionName: 'guides';
   info: {
@@ -869,6 +908,40 @@ export interface ApiPricingPricing extends Schema.CollectionType {
   };
 }
 
+export interface ApiRecipeRecipe extends Schema.CollectionType {
+  collectionName: 'recipes';
+  info: {
+    singularName: 'recipe';
+    pluralName: 'recipes';
+    displayName: 'Recipes';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Recipe_Name: Attribute.String & Attribute.Required;
+    Recipe: Attribute.RichText;
+    slug: Attribute.UID<'api::recipe.recipe', 'Recipe_Name'>;
+    Ingredients: Attribute.Component<'ingredients.ingredient', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::recipe.recipe',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::recipe.recipe',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTestResultTestResult extends Schema.CollectionType {
   collectionName: 'test_results';
   info: {
@@ -926,8 +999,10 @@ declare module '@strapi/types' {
       'api::card.card': ApiCardCard;
       'api::code-block.code-block': ApiCodeBlockCodeBlock;
       'api::component.component': ApiComponentComponent;
+      'api::front-page-content.front-page-content': ApiFrontPageContentFrontPageContent;
       'api::guide.guide': ApiGuideGuide;
       'api::pricing.pricing': ApiPricingPricing;
+      'api::recipe.recipe': ApiRecipeRecipe;
       'api::test-result.test-result': ApiTestResultTestResult;
     }
   }

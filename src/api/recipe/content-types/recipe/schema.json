@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recipes",
+  "info": {
+    "singularName": "recipe",
+    "pluralName": "recipes",
+    "displayName": "Recipes",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Recipe_Name": {
+      "type": "string",
+      "required": true
+    },
+    "Recipe": {
+      "type": "richtext"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Recipe_Name"
+    },
+    "Ingredients": {
+      "displayName": "Ingredient",
+      "type": "component",
+      "repeatable": true,
+      "component": "ingredients.ingredient"
+    }
+  }
+}

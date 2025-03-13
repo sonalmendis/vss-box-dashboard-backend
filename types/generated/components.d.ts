@@ -80,6 +80,18 @@ export interface DeviceTestingDeviceTestList2 extends Schema.Component {
   };
 }
 
+export interface IngredientsIngredient extends Schema.Component {
+  collectionName: 'components_ingredients_ingredients';
+  info: {
+    displayName: 'Ingredient';
+    description: '';
+  };
+  attributes: {
+    Name: Attribute.String;
+    Weight: Attribute.Decimal;
+  };
+}
+
 export interface PricesPricing extends Schema.Component {
   collectionName: 'components_prices_pricings';
   info: {
@@ -91,11 +103,24 @@ export interface PricesPricing extends Schema.Component {
   };
 }
 
+export interface RecipeLinkesLink extends Schema.Component {
+  collectionName: 'components_recipe_linkes_links';
+  info: {
+    displayName: 'Link';
+  };
+  attributes: {
+    url: Attribute.String;
+    Name: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'device-testing.device-test-list2': DeviceTestingDeviceTestList2;
+      'ingredients.ingredient': IngredientsIngredient;
       'prices.pricing': PricesPricing;
+      'recipe-linkes.link': RecipeLinkesLink;
     }
   }
 }
