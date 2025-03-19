@@ -114,6 +114,16 @@ export interface RecipeLinkesLink extends Schema.Component {
   };
 }
 
+export interface SourcesSources extends Schema.Component {
+  collectionName: 'components_sources_sources';
+  info: {
+    displayName: 'sources';
+  };
+  attributes: {
+    link: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -121,6 +131,7 @@ declare module '@strapi/types' {
       'ingredients.ingredient': IngredientsIngredient;
       'prices.pricing': PricesPricing;
       'recipe-linkes.link': RecipeLinkesLink;
+      'sources.sources': SourcesSources;
     }
   }
 }

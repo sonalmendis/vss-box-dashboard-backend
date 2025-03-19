@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reforms",
+  "info": {
+    "singularName": "reform",
+    "pluralName": "reforms",
+    "displayName": "Reforms",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "reform": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Complete",
+        "Decent progress",
+        "In progress",
+        "Stagnant",
+        "No progress at all",
+        "Mixed"
+      ]
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "preset": "markdown"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "sources": {
+      "displayName": "sources",
+      "type": "component",
+      "repeatable": true,
+      "component": "sources.sources"
+    }
+  }
+}

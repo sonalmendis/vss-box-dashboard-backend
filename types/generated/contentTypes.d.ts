@@ -677,6 +677,48 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiBlogBlog extends Schema.CollectionType {
+  collectionName: 'blogs';
+  info: {
+    singularName: 'blog';
+    pluralName: 'blogs';
+    displayName: 'Posts';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Slug: Attribute.UID<'api::blog.blog', 'Title'>;
+    Cover_Image: Attribute.Media;
+    Content: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'markdown';
+        }
+      >;
+    featured: Attribute.Boolean;
+    og_image: Attribute.Media;
+    og_description: Attribute.String;
+    Intro: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'markdown';
+        }
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCardCard extends Schema.CollectionType {
   collectionName: 'cards';
   info: {
@@ -942,6 +984,56 @@ export interface ApiRecipeRecipe extends Schema.CollectionType {
   };
 }
 
+export interface ApiReformReform extends Schema.CollectionType {
+  collectionName: 'reforms';
+  info: {
+    singularName: 'reform';
+    pluralName: 'reforms';
+    displayName: 'Reforms';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    reform: Attribute.String;
+    status: Attribute.Enumeration<
+      [
+        'Complete',
+        'Decent progress',
+        'In progress',
+        'Stagnant',
+        'No progress at all',
+        'Mixed'
+      ]
+    >;
+    images: Attribute.Media;
+    description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'markdown';
+        }
+      >;
+    sources: Attribute.Component<'sources.sources', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::reform.reform',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::reform.reform',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTestResultTestResult extends Schema.CollectionType {
   collectionName: 'test_results';
   info: {
@@ -996,6 +1088,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::blog.blog': ApiBlogBlog;
       'api::card.card': ApiCardCard;
       'api::code-block.code-block': ApiCodeBlockCodeBlock;
       'api::component.component': ApiComponentComponent;
@@ -1003,6 +1096,7 @@ declare module '@strapi/types' {
       'api::guide.guide': ApiGuideGuide;
       'api::pricing.pricing': ApiPricingPricing;
       'api::recipe.recipe': ApiRecipeRecipe;
+      'api::reform.reform': ApiReformReform;
       'api::test-result.test-result': ApiTestResultTestResult;
     }
   }
