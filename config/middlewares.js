@@ -1,7 +1,5 @@
-export default [
-    "strapi::logger",
+module.exports = [
     "strapi::errors",
-    // 'strapi::security',
     {
         name: "strapi::security",
         config: {
@@ -13,13 +11,13 @@ export default [
                         "'self'",
                         "data:",
                         "blob:",
-                        "fi4onf3.blr1.digitaloceanspaces.com",
+                        "*.digitaloceanspaces.com",
                     ],
                     "media-src": [
                         "'self'",
                         "data:",
                         "blob:",
-                        "fi4onf3.blr1.digitaloceanspaces.com",
+                        "*.digitaloceanspaces.com",
                     ],
                     upgradeInsecureRequests: null,
                 },
@@ -28,6 +26,7 @@ export default [
     },
     "strapi::cors",
     "strapi::poweredBy",
+    "strapi::logger",
     "strapi::query",
     "strapi::body",
     "strapi::session",
