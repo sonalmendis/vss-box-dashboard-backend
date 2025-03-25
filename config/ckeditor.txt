@@ -87,6 +87,10 @@ globalThis.CKEditorConfig = {
                         { language: 'php', label: 'PHP' }
                     ]
                 },
+                link: {
+                    addTargetToExternalLinks: true,
+                    defaultTarget: '_blank'
+                }
             }
         }
     }
