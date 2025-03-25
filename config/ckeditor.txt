@@ -1,17 +1,17 @@
 globalThis.CKEditorConfig = {
-    configs:{
-        markdown:{
+    configs: {
+        markdown: {
             field: {
                 key: "markdown",
                 value: "markdown",
                 metadatas: {
-                  intlLabel: {
-                    id: "ckeditor.preset.markdown.label",
-                    defaultMessage: "Custom version",
-                  },
+                    intlLabel: {
+                        id: "ckeditor.preset.markdown.label",
+                        defaultMessage: "Custom version",
+                    },
                 },
             },
-            editorConfig:{
+            editorConfig: {
                 placeholder: 'Custom editor',
                 plugins: [
                     CKEditor5.essentials.Essentials,
@@ -23,7 +23,7 @@ globalThis.CKEditorConfig = {
                     CKEditor5.image.ImageCaption,
                     CKEditor5.image.ImageStyle,
                     CKEditor5.image.ImageToolbar,
-                    CKEditor5.image.ImageUpload, 
+                    CKEditor5.image.ImageUpload,
                     CKEditor5.indent.Indent,
                     CKEditor5.basicStyles.Italic,
                     CKEditor5.link.Link,
@@ -32,16 +32,17 @@ globalThis.CKEditorConfig = {
                     CKEditor5.paragraph.Paragraph,
                     CKEditor5.table.Table,
                     CKEditor5.table.TableToolbar,
-                    CKEditor5.sourceEditing.SourceEditing, 
+                    CKEditor5.sourceEditing.SourceEditing,
                     CKEditor5.strapiPlugins.StrapiMediaLib,
                     CKEditor5.strapiPlugins.StrapiUploadAdapter,
-                    CKEditor5.basicStyles.Code, 
+                    CKEditor5.basicStyles.Code,
                     CKEditor5.codeBlock.CodeBlock,
                     CKEditor5.list.TodoList,
                     CKEditor5.basicStyles.Strikethrough,
                     CKEditor5.horizontalLine.HorizontalLine,
-                    CKEditor5.horizontalLine.HorizontalLine,
-                    CKEditor5.removeFormat.RemoveFormat
+                    CKEditor5.removeFormat.RemoveFormat,
+                    CKEditor5.font.FontColor, // Add FontColor plugin
+                    CKEditor5.font.FontBackgroundColor // Add FontBackgroundColor plugin
                 ],
                 toolbar: {
                     items: [
@@ -56,7 +57,6 @@ globalThis.CKEditorConfig = {
                         'numberedList',
                         'todoList',
                         '|',
-
                         'code',
                         'codeBlock',
                         '|',
@@ -72,12 +72,15 @@ globalThis.CKEditorConfig = {
                         '|',
                         'undo',
                         'redo',
-                        'removeFormat'
+                        'removeFormat',
+                        '|',
+                        'fontColor', // Add fontColor to the toolbar
+                        'fontBackgroundColor' // Add fontBackgroundColor to the toolbar
                     ],
                     shouldNotGroupWhenFull: true
                 },
                 image: {
-                    toolbar: [ 'imageStyle:inline', 'imageStyle:block', 'imageStyle:side', '|', 'toggleImageCaption', 'imageTextAlternative' ]
+                    toolbar: ['imageStyle:inline', 'imageStyle:block', 'imageStyle:side', '|', 'toggleImageCaption', 'imageTextAlternative']
                 },
                 codeBlock: {
                     languages: [
