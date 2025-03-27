@@ -40,7 +40,8 @@ globalThis.CKEditorConfig = {
                     CKEditor5.list.TodoList,
                     CKEditor5.basicStyles.Strikethrough,
                     CKEditor5.horizontalLine.HorizontalLine,
-                    CKEditor5.removeFormat.RemoveFormat
+                    CKEditor5.removeFormat.RemoveFormat,
+                    CKEditor5.font.FontColor
                 ],
                 toolbar: {
                     items: [

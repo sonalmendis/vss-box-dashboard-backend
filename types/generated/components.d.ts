@@ -1,11 +1,11 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Attribute, Schema } from '@strapi/strapi';
 
 export interface DeviceTestingDeviceTestList2 extends Schema.Component {
   collectionName: 'components_sfdfsdfs_device_test_list2s';
   info: {
+    description: '';
     displayName: 'device-test-list';
     icon: 'alien';
-    description: '';
   };
   attributes: {
     Device: Attribute.Enumeration<
@@ -83,8 +83,8 @@ export interface DeviceTestingDeviceTestList2 extends Schema.Component {
 export interface IngredientsIngredient extends Schema.Component {
   collectionName: 'components_ingredients_ingredients';
   info: {
-    displayName: 'Ingredient';
     description: '';
+    displayName: 'Ingredient';
   };
   attributes: {
     Name: Attribute.String;
@@ -98,8 +98,8 @@ export interface PricesPricing extends Schema.Component {
     displayName: 'pricing';
   };
   attributes: {
-    price_class: Attribute.String;
     price: Attribute.String;
+    price_class: Attribute.String;
   };
 }
 
@@ -109,8 +109,8 @@ export interface RecipeLinkesLink extends Schema.Component {
     displayName: 'Link';
   };
   attributes: {
-    url: Attribute.String;
     Name: Attribute.String;
+    url: Attribute.String;
   };
 }
 

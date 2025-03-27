@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@_sh/strapi-plugin-ckeditor": "^2.0.4",
+    "@ckeditor/ckeditor5-font": "^44.3.0",
     "@ckeditor/ckeditor5-remove-format": "^40.1.0",
     "@strapi/plugin-cloud": "4.25.22",
     "@strapi/plugin-i18n": "4.25.22",
