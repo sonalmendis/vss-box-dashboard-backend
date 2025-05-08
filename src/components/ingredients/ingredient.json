@@ -11,6 +11,9 @@
     },
     "Weight": {
       "type": "decimal"
+    },
+    "Unit": {
+      "type": "string"
     }
   }
 }

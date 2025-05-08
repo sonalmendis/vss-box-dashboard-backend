@@ -88,6 +88,7 @@ export interface IngredientsIngredient extends Schema.Component {
   };
   attributes: {
     Name: Attribute.String;
+    Unit: Attribute.String;
     Weight: Attribute.Decimal;
   };
 }
